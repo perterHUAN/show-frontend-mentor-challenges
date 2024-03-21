@@ -1,0 +1,15 @@
+html {
+  block-size: 100%;
+}
+body {
+  min-block-size: 100%;
+
+  /*
+    layout for sub-elements
+  */
+  display: grid;
+  place-content: center;
+
+  background-color: hsl(211, 45%, 89%, 100%);
+  font-family: "Outfit", sans-serif;
+}
