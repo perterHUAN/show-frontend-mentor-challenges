@@ -87,15 +87,25 @@ body {
   --card-gap: 1.5rem;
   --card-box-shadow-x: 0.5rem;
   --card-box-shadow-y: 0.5rem;
+  --card-box-shadow-hover-x: 1rem;
+  --card-box-shadow-hover-y: 1rem;
   --card-box-shadow-color: var(--black);
+  --card-border-with: 1px;
+  --card-border-color: var(--black);
   max-width: var(--card-max-width);
   border-radius: var(--card-border-radius);
   background-color: white;
   padding: var(--card-paddding);
   box-shadow: var(--card-box-shadow-x) var(--card-box-shadow-y) 0 0 var(--card-box-shadow-color);
+  border: var(--card-border-with) solid var(--card-border-color);
   display: flex;
   flex-direction: column;
   gap: var(--card-gap);
+  transition: ease-in 0.3s;
+}
+.card:hover {
+  --card-box-shadow-x: var(--card-box-shadow-hover-x);
+  --card-box-shadow-y: var(--card-box-shadow-hover-y);
 }
 
 .card__image {
