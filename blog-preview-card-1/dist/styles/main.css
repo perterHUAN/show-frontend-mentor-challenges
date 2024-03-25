@@ -98,12 +98,13 @@ body {
   padding: var(--card-paddding);
   box-shadow: var(--card-box-shadow-x) var(--card-box-shadow-y) 0 0 var(--card-box-shadow-color);
   border: var(--card-border-with) solid var(--card-border-color);
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--card-gap);
   transition: ease-in 0.3s;
 }
-.card:hover {
+.card:is(:hover, :focus-within) {
   --card-box-shadow-x: var(--card-box-shadow-hover-x);
   --card-box-shadow-y: var(--card-box-shadow-hover-y);
 }
@@ -132,10 +133,16 @@ body {
 .card__content .title {
   text-decoration: none;
   color: var(--text-primary);
+  outline: none;
 }
-.card__content .title:hover {
+.card__content .title:is(:hover, :focus) {
   color: var(--yellow);
   cursor: pointer;
+}
+.card__content .title::after {
+  position: absolute;
+  content: "";
+  inset: 0;
 }
 
 .card__author {
