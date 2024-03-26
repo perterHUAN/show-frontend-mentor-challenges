@@ -1,0 +1,156 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+  --green: hsl(75, 94%, 57%);
+  --text-primary: var(--white);
+  --text-secondary: var(--green);
+  --bg-primary: var(--off-black);
+  --bg-secondary: var(--dark-grey);
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  padding: 1rem;
+}
+
+.card {
+  --card-max-width: 21.5625rem;
+  --card-padding: 1.5rem;
+  --card-image-size: 4.125rem;
+  --card-border-radius: 0.625rem;
+  max-width: var(--card-max-width);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  width: var(--card-image-size);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  align-self: center;
+}
+
+.card .address {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.card .occuption {
+  margin-top: 1.5rem;
+}
+
+.card .social-links {
+  --gap: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  list-style-type: none;
+  padding: 0;
+}
+
+.card .social-links .social-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-primary);
+  background-color: #333;
+  padding-block: 0.9375rem;
+  border-radius: 10px;
+  outline: none;
+  display: block;
+}
+.card .social-links .social-link:is(:hover, :focus) {
+  color: black;
+  background-color: var(--green);
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */
