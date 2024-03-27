@@ -84,13 +84,23 @@ html {
 
 body {
   min-block-size: 100%;
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   text-align: center;
   font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
   padding: 1rem;
+}
+
+main {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -98,6 +108,7 @@ body {
   --card-padding: 1.5rem;
   --card-image-size: 4.125rem;
   --card-border-radius: 0.625rem;
+  width: 100%;
   max-width: var(--card-max-width);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
@@ -115,16 +126,16 @@ body {
   align-self: center;
 }
 
-.card .address {
+.card__address {
   color: var(--text-secondary);
   font-weight: 600;
 }
 
-.card .occuption {
+.card__occuption {
   margin-top: 1.5rem;
 }
 
-.card .social-links {
+.card__social-links {
   --gap: 1rem;
   margin-top: 1.5rem;
   display: flex;
@@ -134,7 +145,7 @@ body {
   padding: 0;
 }
 
-.card .social-links .social-link {
+.card__social-link {
   text-decoration: none;
   font-weight: bold;
   color: var(--text-primary);
@@ -144,7 +155,7 @@ body {
   outline: none;
   display: block;
 }
-.card .social-links .social-link:is(:hover, :focus) {
+.card__social-link:is(:hover, :focus) {
   color: black;
   background-color: var(--green);
 }
